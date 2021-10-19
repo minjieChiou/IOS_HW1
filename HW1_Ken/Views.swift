@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 struct BodyView: View {
+    var bodyColor:Color = Color.init(red: 0, green: 0.8, blue: 1)
+    var abdomenColor:Color = Color.white
+    
     var body: some View {
-        var bodyColor:Color = Color.init(red: 0, green: 0.8, blue: 1)
-        var abdomenColor:Color = Color.white
-        
         Group{
             Bd()
                 .fill(bodyColor)
@@ -37,9 +37,8 @@ struct BodyView: View {
 }
 
 struct FaceView: View{
+    var mouthColor:Color = Color.init(red: 1, green: 0.3, blue: 0.3)
     var body: some View{
-        var mouthColor:Color = Color.init(red: 1, green: 0.3, blue: 0.3)
-        
         Group{
             LeftEyeWhite()
                 .fill(Color.white)
@@ -63,14 +62,13 @@ struct FaceView: View{
 }
 
 struct BugCatView:View{
+    var bodyColor:Color = Color.init(red: 0, green: 0.8, blue: 1)
+    var abdomenColor:Color = Color.white
+    var mouthColor:Color = Color.init(red: 1, green: 0.3, blue: 0.3)
     var body: some View{
-        var BC:Color = Color.init(red: 0, green: 0.8, blue: 1)
-        var AC:Color = Color.white
-        var MC:Color = Color.init(red: 1, green: 0.3, blue: 0.3)
-        
-        Group{
-            BodyView(bodyColor: BC, AbdomenColor: AC)
-            FaceView(mouthColor: MC)
+        ZStack{
+            BodyView(bodyColor: bodyColor, abdomenColor: abdomenColor)
+            FaceView(mouthColor: mouthColor)
         }
     }
 }

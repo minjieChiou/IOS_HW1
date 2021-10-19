@@ -19,7 +19,7 @@ struct ContentView: View {
                             .offset(x: 0, y: -280))
             BugCatView()
                 .offset(x: 120, y: 0)
-            BugCatView()
+            BugCatView(bodyColor: .orange, abdomenColor: .red, mouthColor: .blue)
                 .rotation3DEffect(.degrees(180), axis: (x:0, y:1, z:0))
                 .scaleEffect(0.3)
                 .offset(x: -130, y: -130)
